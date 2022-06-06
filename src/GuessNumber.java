@@ -6,13 +6,16 @@ public class GuessNumber {
         Scanner in = new Scanner(System.in);
 
         //游戏设置
-        System.out.println("请输入开始数字（大于0的整数）：");
-        int startnum = in.nextInt();
-        System.out.println("请输入结束数字（大于0的整数）：");
-        int endnum = in.nextInt();
-        if (endnum<=startnum){
-            System.out.println("结束数字要大于开始数字，请重新输入：");
-            endnum=in.nextInt();
+        int startnum = 0;
+        int endnum = 0;
+        //限制开始结束数字的范围
+        while (startnum <= 0) {
+            System.out.println("请输入开始数字（大于0的整数）：");
+            startnum = in.nextInt();
+        }
+        while (endnum <= 0 || endnum <= startnum) {
+            System.out.println("请输入结束数字（大于0的整数）：");
+            endnum = in.nextInt();
         }
         int mod = endnum - startnum;
         int totalguess = 5;
@@ -39,6 +42,12 @@ public class GuessNumber {
             while (guessleft > 0) {
                 System.out.println("请输入猜测的数字，输入-1退出游戏。");
                 int guessnum = in.nextInt();
+                if (guessnum == num) {
+                    System.out.println("你猜对了！");
+                    guessleft = totalguess;
+                    currectcount += 1;
+                    break;
+                }
                 guessleft -= 1;
                 if (guessleft == 0) {
                     System.out.println("你太菜了，自动退出游戏。\n" + "共猜对了：" + currectcount + "次数字。");
@@ -56,11 +65,6 @@ public class GuessNumber {
                     System.out.println("你猜得小了，还剩余" + guessleft + "次机会。");
                 } else if (guessnum > num) {
                     System.out.println("你猜得大了，还剩余" + guessleft + "次机会。");
-                } else if (guessnum == num) {
-                    System.out.println("你猜对了！");
-                    guessleft = totalguess;
-                    currectcount += 1;
-                    break;
                 }
             }
         }
