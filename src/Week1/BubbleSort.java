@@ -1,4 +1,4 @@
-package Homework;
+package Week1;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -11,6 +11,11 @@ public class BubbleSort {
 //        b. 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最小的数。
 //        c. 针对所有的元素重复以上的步骤，除了最后一个。
 //        d. 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较
+
+//        请输入：
+//        jii0e0fjdu9fasd9fwe302/*-d
+//有序字符串：wusjjiifffeeddda9932000/-*
+//ASCII码：[119, 117, 115, 106, 106, 105, 105, 102, 102, 102, 101, 101, 100, 100, 100, 97, 57, 57, 51, 50, 48, 48, 48, 47, 45, 42]
         //创建输入
         Scanner in = new Scanner(System.in);
         System.out.println("请输入：");
@@ -27,8 +32,8 @@ public class BubbleSort {
                 }
             }
         }
-        //------------------------问题1
-        //System.out.println("有序字符串："+inputChars);
+        //------------------------TODO 问题1
+//        System.out.println("有序字符串：" + inputChars);
         System.out.print("有序字符串：");
         System.out.println(inputChars);
         //-----------------------
@@ -38,6 +43,6 @@ public class BubbleSort {
             ASCIIChars[i] = (int) inputChars[i];
         }
         //Arrays.toString不需要循环遍历直接输出数组
-        System.out.println("ASCII码："+Arrays.toString(ASCIIChars));
+        System.out.println("ASCII码：" + Arrays.toString(ASCIIChars));
     }
 }
