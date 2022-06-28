@@ -15,10 +15,7 @@ public class fileOperationTest {
                             "2.创建文件夹。\n" +
                             "3.创建文本文件。\n" +
                             "4.写入文本文件。\n" +
-                            "5.读取文本文件。\n" +
-                            "6.删除文件夹。\n" +
-                            "7.删除文本文件。\n" +
-                            "8.重命名文本文件。");
+                            "5.读取文本文件。\n" );
             System.out.println("请输入想要进行的操作：");
             int choose = in.nextInt();
             switch (choose) {
@@ -44,7 +41,6 @@ public class fileOperationTest {
                     File sourceFile = new File(String.valueOf(file.target));
                     file.readFile(sourceFile);
                     break;
-                case 6:
 
             }
         }

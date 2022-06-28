@@ -11,7 +11,9 @@ import java.util.stream.Collectors;
 public class FileOperation implements FileOpeInterface {
 
     private static final Scanner in = new Scanner(System.in);
-    private String FileAddress = "." + File.separator;
+    public String FileAddress = "." + File.separator;
+
+    String txtfile=null;
 
     public File target=null;
 
@@ -130,10 +132,8 @@ public class FileOperation implements FileOpeInterface {
         boolean deleteFiles = in.nextBoolean();
 
         if (deleteFiles) {
-            for (int i = 0; i < 20; i++) {
-                File fn = new File(newDir, fileNameNew + i + ".txt");
+                File fn = new File(newDir, fileNameNew);
                 System.out.println("删除文件" + fn.delete());
-            }
         }
     }
 
